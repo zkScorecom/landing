@@ -271,6 +271,8 @@ export function LandingPage({ enableRevolvingAnimation = false }: LandingPagePro
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<keyof typeof tabContent>("defi");
+  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
+  const [resourcesDropdownTimeout, setResourcesDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
@@ -336,6 +338,15 @@ if (userScore.creditRating > 700) {
     return unsubscribe;
   }, [scrollY]);
 
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (resourcesDropdownTimeout) {
+        clearTimeout(resourcesDropdownTimeout);
+      }
+    };
+  }, [resourcesDropdownTimeout]);
+
   return (
     <>
     <div className="relative bg-black">
@@ -358,52 +369,131 @@ if (userScore.creditRating > 700) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
-                    className="hidden md:flex items-center gap-x-14"
+                    className="hidden md:flex items-center gap-x-4 lg:gap-x-6 relative"
                   >
                     <button
                       onClick={() => scrollToSection('trust')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap`}
                     >
                       Trust
                     </button>
                     <button
                       onClick={() => scrollToSection('reputation')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap`}
                     >
-                      Reputation
+                      Features
                     </button>
                     <button
                       onClick={() => scrollToSection('integration')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap`}
                     >
                       Integration
                     </button>
                     <button
                       onClick={() => scrollToSection('capital')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap`}
                     >
                       Capital
                     </button>
                     <button
                       onClick={() => scrollToSection('public-good')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap`}
                     >
-                      Public Good
+                      Reputation
                     </button>
-                    <button
-                      onClick={() => scrollToSection('trustscore')}
-                      className={`transition-colors text-gray-300 hover:text-white cursor-pointer`}
+                    {/* Resources Dropdown */}
+                    <div 
+                      className="relative"
+                      onMouseEnter={() => {
+                        if (resourcesDropdownTimeout) {
+                          clearTimeout(resourcesDropdownTimeout);
+                          setResourcesDropdownTimeout(null);
+                        }
+                        setIsResourcesDropdownOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        const timeout = setTimeout(() => {
+                          setIsResourcesDropdownOpen(false);
+                        }, 100);
+                        setResourcesDropdownTimeout(timeout);
+                      }}
                     >
-                      Trustscore
-                    </button>
+                      <button
+                        className={`transition-colors text-gray-300 hover:text-white cursor-pointer text-sm whitespace-nowrap flex items-center gap-1`}
+                      >
+                        Resources
+                        <svg 
+                          className={`w-4 h-4 transition-transform ${isResourcesDropdownOpen ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {isResourcesDropdownOpen && (
+                        <div className="absolute top-full left-0 w-80 z-50 -mt-1 pt-1">
+                          <div className="bg-white rounded-lg shadow-xl border border-gray-200 py-6">
+                            <div className="grid grid-cols-1 gap-6 px-6">
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    scrollToSection('trustscore');
+                                    setIsResourcesDropdownOpen(false);
+                                  }}
+                                  className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
+                                >
+                                  Trustscore
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    scrollToSection('faq');
+                                    setIsResourcesDropdownOpen(false);
+                                  }}
+                                  className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
+                                >
+                                  FAQs
+                                </button>
+                              </div>
+                              <div>
+                                <a
+                                  href="https://docs.onzks.com"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
+                                >
+                                  Builder
+                                </a>
+                                <a
+                                  href="https://docs.onzks.com"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
+                                >
+                                  Documentation
+                                </a>
+                                <a
+                                  href="https://branding.zkscore.io"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
+                                >
+                                  Brand Assets
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                     <a
                       href="https://app.zkscore.io"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="outline outline-[#0CFF85]/20 bg-gradient-to-b from-[#079950] to-[#0CFF85] text-white py-2.5 px-6 rounded-full font-medium flex items-center justify-center gap-3 transition-all duration-300 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.4)]"
+                      className="outline outline-[#0CFF85]/20 bg-gradient-to-b from-[#079950] to-[#0CFF85] text-white py-2.5 px-4 lg:px-6 rounded-full font-medium flex items-center justify-center gap-2 lg:gap-3 transition-all duration-300 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.4)] whitespace-nowrap flex-shrink-0"
                     >
-                      <Image src="/sparkles.svg" alt="launch app" width="27" height="24" />
-                      <span>Launch App</span>
+                      <Image src="/sparkles.svg" alt="launch app" width="20" height="18" className="w-5 h-5 lg:w-[27px] lg:h-[24px]" />
+                      <span className="text-sm lg:text-base">Launch App</span>
                     </a>
                   </motion.nav>
 
@@ -445,7 +535,7 @@ if (userScore.creditRating > 700) {
                           onClick={() => scrollToSection('reputation')}
                           className="text-gray-300 hover:text-white transition-colors py-2 px-4 hover:bg-white/5 rounded-lg text-left"
                         >
-                          Reputation
+                          Features
                         </button>
                         <button
                           onClick={() => scrollToSection('integration')}
@@ -463,14 +553,70 @@ if (userScore.creditRating > 700) {
                           onClick={() => scrollToSection('public-good')}
                           className="text-gray-300 hover:text-white transition-colors py-2 px-4 hover:bg-white/5 rounded-lg text-left"
                         >
-                          Public Good
+                          Reputation
                         </button>
-                        <button
-                          onClick={() => scrollToSection('trustscore')}
-                          className="text-gray-300 hover:text-white transition-colors py-2 px-4 hover:bg-white/5 rounded-lg text-left"
-                        >
-                          Trustscore
-                        </button>
+                        <div className="border-t border-gray-800 pt-4">
+                          <button
+                            onClick={() => setIsResourcesDropdownOpen(!isResourcesDropdownOpen)}
+                            className="text-gray-300 hover:text-white transition-colors py-2 px-4 hover:bg-white/5 rounded-lg text-left w-full flex items-center justify-between"
+                          >
+                            Resources
+                            <svg 
+                              className={`w-4 h-4 transition-transform ${isResourcesDropdownOpen ? 'rotate-180' : ''}`}
+                              fill="none" 
+                              stroke="currentColor" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {isResourcesDropdownOpen && (
+                            <div className="mt-2 pl-4 space-y-2">
+                              <button
+                                onClick={() => {
+                                  scrollToSection('trustscore');
+                                  setIsResourcesDropdownOpen(false);
+                                }}
+                                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
+                              >
+                                Trustscore
+                              </button>
+                              <button
+                                onClick={() => {
+                                  scrollToSection('faq');
+                                  setIsResourcesDropdownOpen(false);
+                                }}
+                                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
+                              >
+                                FAQs
+                              </button>
+                              <a
+                                href="https://docs.onzks.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
+                              >
+                                Builder
+                              </a>
+                              <a
+                                href="https://docs.onzks.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
+                              >
+                                Documentation
+                              </a>
+                              <a
+                                href="https://branding.zkscore.io"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
+                              >
+                                Brand Assets
+                              </a>
+                            </div>
+                          )}
+                        </div>
                         <a
                           href="https://app.zkscore.io"
                           target="_blank"
@@ -1237,7 +1383,7 @@ if (userScore.creditRating > 700) {
         </section>
 
         {/* Section 9 */}
-        <section className="py-10 md:py-20 bg-[url('/green-circle-background.png')] bg-contain bg-right bg-no-repeat">
+        <section id="faq" className="py-10 md:py-20 bg-[url('/green-circle-background.png')] bg-contain bg-right bg-no-repeat">
           <div className="text-center mb-10 md:mb-20 px-5 max-w-screen-xl mx-auto ">
             <motion.div initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
