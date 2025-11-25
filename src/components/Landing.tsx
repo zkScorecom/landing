@@ -60,7 +60,7 @@ const tabContent = {
   defi: {
     title: "DeFi Protocols",
     description:
-      "ZKScore helps lending, trading, and yield platforms build safer, more efficient markets.",
+      "Anylayer helps lending, trading, and yield platforms build safer, more efficient markets.",
     features: [
       {
         title: "Trust-Based LTVs",
@@ -209,12 +209,12 @@ const data = [
 
 const faqs = [
   {
-    title: "What is ZKScore and how does it work?",
+    title: "What is Anylayer and how does it work?",
     description:
-      "ZKScore is a decentralized identity and reputation system. Mint a unique .zks name (like yourname.zks) that serves as your Web3 passport. Your Trust Score is calculated from wallet age, achievements, DeFi activity, and NFT trading—all verified on-chain using zero-knowledge proofs",
+      "Anylayer is a decentralized identity and reputation system. Mint a unique .zks name (like yourname.zks) that serves as your Web3 passport. Your Trust Score is calculated from wallet age, achievements, DeFi activity, and NFT trading—all verified on-chain using zero-knowledge proofs",
   },
   {
-    title: "How do I get started with ZKScore?",
+    title: "How do I get started with Anylayer?",
     description:
       "Connect your wallet → Search for a .zks name → Mint it → Activate scoring by signing in. Once activated, your Trust Score updates automatically based on your on-chain activity, and your identity becomes soulbound (non-transferable)",
   },
@@ -249,7 +249,7 @@ const faqs = [
       "If your identity expires, you retain access to your .zks name, but your scoring will stop and existing Trust Scores will gradually decay. Your name won't be available for others to mint while you still hold it. If you don't activate scoring at all, your name remains yours but you won't earn any Trust Score points.",
   },
   {
-    title: "Is my data private and secure on ZKScore?",
+    title: "Is my data private and secure on Anylayer?",
     description:
       "Yes! Privacy features include zero-knowledge proofs (prove reputation without revealing details), wallet-based authentication (no email/password needed), and selective disclosure (choose what to share). Security: audited smart contracts, open-source code, non-custodial, GDPR compliant. Public: .zks name, on-chain score, wallet address. Private: score breakdowns, profile info, email (encrypted).",
   },
@@ -280,19 +280,19 @@ export function LandingPage({ enableRevolvingAnimation = false }: LandingPagePro
 
   const codeBlocks = [
     {
-      title: "Install ZKScore SDK",
-      code: "Install zkscore-sdk",
+      title: "Install Anylayer SDK",
+      code: "Install anylayer-sdk",
     },
     {
       title: "Initialize And Get User Score",
-      code: `import { ZKScore } from '@zkscore/sdk';
+      code: `import { Anylayer } from '@anylayer/sdk';
 
-const zkscore = new ZKScore({
+const anylayer = new Anylayer({
   apiKey: 'your-api-key',
   network: 'mainnet'
 });
 
-const userScore = await zkscore.getScore(userAddress);
+const userScore = await anylayer.getScore(userAddress);
 
 // Use score for loan decisions
 if (userScore.creditRating > 700) {
@@ -362,7 +362,7 @@ if (userScore.creditRating > 700) {
               <div className="max-w-screen-xl mx-auto px-5 py-5">
                 <div className="flex items-center justify-between h-16">
                   {/* Logo */}
-                  <Image src="/zkscore-logo.svg" alt="logo" width="160" height="64" />
+                  <Image src="/zkscore-logo.svg" alt="Anylayer logo" width="160" height="64" />
 
                   {/* Desktop Navigation */}
                   <motion.nav
@@ -473,7 +473,7 @@ if (userScore.creditRating > 700) {
                                   Documentation
                                 </a>
                                 <a
-                                  href="https://branding.zkscore.io"
+                                  href="https://branding.anylayer.org"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="block w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded transition-colors text-sm"
@@ -487,7 +487,7 @@ if (userScore.creditRating > 700) {
                       )}
                     </div>
                     <a
-                      href="https://app.zkscore.io"
+                      href="https://app.anylayer.org"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="outline outline-[#0CFF85]/20 bg-gradient-to-b from-[#079950] to-[#0CFF85] text-white py-2.5 px-4 lg:px-6 rounded-full font-medium flex items-center justify-center gap-2 lg:gap-3 transition-all duration-300 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.4)] whitespace-nowrap flex-shrink-0"
@@ -607,7 +607,7 @@ if (userScore.creditRating > 700) {
                                 Documentation
                               </a>
                               <a
-                                href="https://branding.zkscore.io"
+                                href="https://branding.anylayer.org"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block w-full text-left text-gray-300 hover:text-white transition-colors py-1 px-4 hover:bg-white/5 rounded-lg"
@@ -618,7 +618,7 @@ if (userScore.creditRating > 700) {
                           )}
                         </div>
                         <a
-                          href="https://app.zkscore.io"
+                          href="https://app.anylayer.org"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full outline outline-[#0CFF85]/20 bg-gradient-to-b from-[#079950] to-[#0CFF85] text-white py-2.5 px-6 rounded-full font-medium flex items-center justify-start gap-3 transition-all duration-300 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.4)]"
@@ -654,7 +654,7 @@ if (userScore.creditRating > 700) {
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 items-center pt-0 md:pt-4">
                       <a
-                        href="https://app.zkscore.io"
+                        href="https://app.anylayer.org"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-[#0CFF85] hover:bg-[#0CFF85]/80 text-black font-medium max-w-44 md:max-w-40 w-full px-4 md:px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base lg:text-base text-center"
@@ -992,10 +992,10 @@ if (userScore.creditRating > 700) {
                 className="max-w-[31.25rem]"
               >
                   <h2 className="text-[24px] md:text-[30px] lg:text-[2.5rem] font-medium text-white mb-6 leading-tight">
-                    Easy Integration With ZKScore SDK
+                    Easy Integration With Anylayer SDK
                   </h2>
                   <p className="opacity-70 text-white text-base">
-                    ZKScore’s SDK makes it seamless to integrate reputation data
+                    Anylayer's SDK makes it seamless to integrate reputation data
                     into your dApp or protocol. In just a few lines of code, you
                     can access wallet trust scores, request zk-proofs, and
                     tailor experiences for users based on verified credibility.
@@ -1007,7 +1007,7 @@ if (userScore.creditRating > 700) {
                     rel="noopener noreferrer"
                     className="inline-block bg-[#0CFF85] hover:bg-[#0CFF85]/80 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 mt-4 md:mt-14"
                   >
-                    Build with ZKScore
+                    Build with Anylayer
                   </a>
               </motion.div>
               </div>
@@ -1090,7 +1090,7 @@ if (userScore.creditRating > 700) {
                 Unlock capital, not your data
               </h2>
               <p className="opacity-70 text-white text-base md:basis-2/4 max-w-[38rem] w-full">
-                ZKScore is more than a credit score for Web3. It’s a trust layer
+                Anylayer is more than a credit score for Web3. It's a trust layer
                 designed for different groups in the ecosystem, each with unique
                 ways to benefit from portable zk-verified reputation.
               </p>
@@ -1193,7 +1193,7 @@ if (userScore.creditRating > 700) {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.2 }} className="max-w-[38rem]">
             <h2 className="text-[1.5rem] md:text-[1.875rem] lg:text-[2.5rem] font-medium text-white mb-6 leading-tight">
-              ZKScore For Public Good
+              Anylayer For Public Good
             </h2>
             <p className="opacity-70 text-white text-base">
               In Web3, every wallet starts from zero, no portable reputation, no
@@ -1244,7 +1244,7 @@ if (userScore.creditRating > 700) {
                   From Wallet Activity <br /> To Verifiable Trust.
                 </h2>
                 <p className="opacity-70 text-white text-base mb-20 max-w-5xl mx-auto">
-                  ZKScore turns everyday onchain actions into a portable trustscore
+                  Anylayer turns everyday onchain actions into a portable trustscore
                   that protocols and apps can use for lending, rewards, governance,
                   and more. Built with zero-knowledge proofs, your reputation
                   remains private while still being fully verifiable.
@@ -1257,7 +1257,7 @@ if (userScore.creditRating > 700) {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex items-center gap-6">
                   <div className="absolute inset-0 top-2/4 left-2/4 transform -translate-x-20 -translate-y-9 ">
-                    <Image src="/zkscore-logo.svg" alt="logo" width="160" height="64" />
+                    <Image src="/zkscore-logo.svg" alt="Anylayer logo" width="160" height="64" />
                   </div>
                   {/* Play Button */}
                   <button
@@ -1443,7 +1443,7 @@ if (userScore.creditRating > 700) {
                   </h3>
                   <p className="text-base text-white opacity-70">
                     be the first to know about new features, upcoming events,
-                    and everything happening in the world of zKScore.
+                    and everything happening in the world of Anylayer.
                   </p>
                   <div
                     className="mt-3 flex flex-wrap md:flex-nowrap justify-center items-center bg-[#ffffff0a] p-[6px] rounded-lg"
@@ -1494,7 +1494,7 @@ if (userScore.creditRating > 700) {
                     <a href="https://discord.gg/ZmnsPMKgjw" target="_blank" className="flex items-center justify-center w-8 h-8 bg-white rounded-lg">
                     <Image src="/discord.svg" alt="discord" width="16" height="12" />
                     </a>
-                    <a href="https://www.linkedin.com/company/zkscore" target="_blank" className="flex items-center justify-center w-8 h-8 bg-white rounded-lg">
+                    <a href="https://www.linkedin.com/company/anylayer" target="_blank" className="flex items-center justify-center w-8 h-8 bg-white rounded-lg">
                     <Image src="/linkedin.svg" alt="linkedin" width="17" height="17" />
                     </a>
                 <a href="https://x.com/buildonzks" target="_blank" className="flex items-center justify-center w-8 h-8 bg-white rounded-lg">

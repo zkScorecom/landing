@@ -52,7 +52,7 @@ export default function BuilderPage() {
               </div>
               <span className={`text-xl font-bold transition-colors ${
                 headerStyle === 'solid' ? 'text-black' : 'text-white'
-              }`}>ZKScore</span>
+              }`}>Anylayer</span>
             </div>
 
             {/* Navigation */}
@@ -75,7 +75,7 @@ export default function BuilderPage() {
                 headerStyle === 'solid' ? 'text-gray-700 hover:text-black' : 'text-gray-300 hover:text-white'
               }`}>News</a>
               <div className="flex items-center space-x-3 ml-4">
-                <a href="https://twitter.com/zkscore" target="_blank" rel="noopener noreferrer" className={`transition-colors ${
+                <a href="https://twitter.com/anylayer" target="_blank" rel="noopener noreferrer" className={`transition-colors ${
                   headerStyle === 'solid' ? 'text-gray-700 hover:text-black' : 'text-gray-300 hover:text-white'
                 }`}>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -100,7 +100,7 @@ export default function BuilderPage() {
               className="flex items-center space-x-4"
             >
               <a
-                href="https://app.zkscore.io"
+                href="https://app.anylayer.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
@@ -128,7 +128,7 @@ export default function BuilderPage() {
               Builder Tools
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Integrate ZKScore into your dApp with our comprehensive SDK, APIs, and developer tools.
+              Integrate Anylayer into your dApp with our comprehensive SDK, APIs, and developer tools.
               Build the future of on-chain reputation with 300 free credits to kickstart your journey.
             </p>
           </motion.div>
@@ -147,7 +147,7 @@ export default function BuilderPage() {
           >
             <h2 className="text-4xl font-bold text-black mb-6">Quick Start</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get started with ZKScore in minutes. Choose your integration method and start building.
+              Get started with Anylayer in minutes. Choose your integration method and start building.
             </p>
           </motion.div>
 
@@ -173,7 +173,7 @@ export default function BuilderPage() {
                   </button>
                 </div>
                 <code className="text-green-400 font-mono">
-                  npm install @zkscore/sdk
+                  npm install @anylayer/sdk
                 </code>
               </div>
               
@@ -197,14 +197,14 @@ export default function BuilderPage() {
               
               <div className="bg-black rounded-lg p-4 mb-6 overflow-x-auto">
                 <pre className="text-sm">
-                  <code className="text-green-400">{`import { ZKScore } from '@zkscore/sdk';
+                  <code className="text-green-400">{`import { Anylayer } from '@anylayer/sdk';
 
-const zkscore = new ZKScore({
+const anylayer = new Anylayer({
   apiKey: 'your-api-key',
   network: 'mainnet'
 });
 
-const score = await zkscore.getScore(
+const score = await anylayer.getScore(
   '0x742d35Cc6634C0532925a3b8d4'
 );`}</code>
                 </pre>
@@ -331,7 +331,7 @@ const score = await zkscore.getScore(
               </div>
               <pre className="text-green-400 font-mono text-sm overflow-x-auto">
 {`// Get comprehensive reputation score for a user
-const userScore = await zkscore.getScore('0x742d35Cc6634C0532925a3b8d4');
+const userScore = await anylayer.getScore('0x742d35Cc6634C0532925a3b8d4');
 
 console.log({
   overall: userScore.overall,      // 750
@@ -360,14 +360,14 @@ console.log({
               </div>
               <pre className="text-green-400 font-mono text-sm overflow-x-auto">
 {`// Generate zero-knowledge proof for reputation claim
-const proof = await zkscore.generateProof({
+const proof = await anylayer.generateProof({
   user: '0x742d35Cc6634C0532925a3b8d4',
   claim: 'score_above_500',
   includePrivateData: false
 });
 
 // Verify proof without revealing actual score
-const isValid = await zkscore.verifyProof(proof);
+const isValid = await anylayer.verifyProof(proof);
 console.log('Proof valid:', isValid); // true`}
               </pre>
             </motion.div>
@@ -388,7 +388,7 @@ console.log('Proof valid:', isValid); // true`}
               </div>
               <pre className="text-green-400 font-mono text-sm overflow-x-auto">
 {`// Subscribe to real-time score updates
-const subscription = zkscore.subscribe('0x742d35Cc6634C0532925a3b8d4', {
+const subscription = anylayer.subscribe('0x742d35Cc6634C0532925a3b8d4', {
   onScoreUpdate: (newScore) => {
     console.log('Score updated:', newScore);
     updateUI(newScore);
@@ -419,7 +419,7 @@ subscription.unsubscribe();`}
           >
             <h2 className="text-4xl font-bold text-black mb-6">Developer Resources</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to build successfully with ZKScore.
+              Everything you need to build successfully with Anylayer.
             </p>
           </motion.div>
 

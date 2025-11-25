@@ -23,9 +23,9 @@ interface NewsArticle {
 const mockNews: NewsArticle[] = [
   {
     id: '1',
-    title: 'ZKScore Launches Cross-Chain Reputation System',
+    title: 'Anylayer Launches Cross-Chain Reputation System',
     excerpt: 'Revolutionary zero-knowledge proof system now supports multi-chain reputation tracking across Ethereum, Polygon, and Base networks.',
-    content: `ZKScore is proud to announce the launch of our groundbreaking cross-chain reputation system, enabling users to build and maintain their on-chain reputation across multiple blockchain networks.
+    content: `Anylayer is proud to announce the launch of our groundbreaking cross-chain reputation system, enabling users to build and maintain their on-chain reputation across multiple blockchain networks.
 
 ## Key Features
 
@@ -54,8 +54,8 @@ This launch represents a significant milestone for the DeFi ecosystem, enabling:
 - Reduced collateral requirements for proven users
 - Improved risk assessment for protocols
 
-The system is already being integrated by major DeFi protocols, with over 50 partners committed to supporting ZKScore reputation in their platforms.`,
-    author: 'ZKScore Team',
+The system is already being integrated by major DeFi protocols, with over 50 partners committed to supporting Anylayer reputation in their platforms.`,
+    author: 'Anylayer Team',
     publishedAt: '2024-03-15T10:00:00Z',
     readTime: '5 min read',
     category: 'Product',
@@ -66,12 +66,12 @@ The system is already being integrated by major DeFi protocols, with over 50 par
   {
     id: '2',
     title: 'Partnership with Uniswap Labs Announced',
-    excerpt: 'ZKScore integrates with Uniswap to provide reputation-based trading benefits and reduced fees for high-reputation users.',
+    excerpt: 'Anylayer integrates with Uniswap to provide reputation-based trading benefits and reduced fees for high-reputation users.',
     content: `We're excited to announce our strategic partnership with Uniswap Labs, bringing reputation-based benefits to the world's largest decentralized exchange.
 
 ## Partnership Benefits
 
-This collaboration introduces several new features for ZKScore users:
+This collaboration introduces several new features for Anylayer users:
 
 - **Reduced Trading Fees**: Up to 50% fee reduction for high-reputation traders
 - **Priority Access**: Early access to new Uniswap features and pools
@@ -86,7 +86,7 @@ The integration will roll out in phases:
 **Phase 2 (Q3 2024)**: Fee reduction implementation
 **Phase 3 (Q4 2024)**: Full governance integration
 
-This partnership demonstrates the growing adoption of reputation systems in DeFi and validates ZKScore's approach to on-chain identity.`,
+This partnership demonstrates the growing adoption of reputation systems in DeFi and validates Anylayer's approach to on-chain identity.`,
     author: 'Sarah Chen',
     publishedAt: '2024-03-10T14:30:00Z',
     readTime: '3 min read',
@@ -97,9 +97,9 @@ This partnership demonstrates the growing adoption of reputation systems in DeFi
   },
   {
     id: '3',
-    title: 'ZKScore Raises $25M Series A Funding',
-    excerpt: 'Leading venture capital firms invest in ZKScore\'s vision for decentralized reputation infrastructure.',
-    content: `ZKScore has successfully raised $25 million in Series A funding, led by Paradigm with participation from Coinbase Ventures, a16z crypto, and other prominent investors.
+    title: 'Anylayer Raises $25M Series A Funding',
+    excerpt: 'Leading venture capital firms invest in Anylayer\'s vision for decentralized reputation infrastructure.',
+    content: `Anylayer has successfully raised $25 million in Series A funding, led by Paradigm with participation from Coinbase Ventures, a16z crypto, and other prominent investors.
 
 ## Funding Details
 
@@ -122,7 +122,7 @@ The funding will be used to:
 
 The reputation infrastructure market is expected to grow significantly as DeFi matures. Our investors recognize the critical need for trustless reputation systems in decentralized finance.
 
-"ZKScore is building the missing piece of DeFi infrastructure," said Matt Huang, Co-Founder of Paradigm. "Their approach to privacy-preserving reputation will unlock new possibilities for the entire ecosystem."`,
+"Anylayer is building the missing piece of DeFi infrastructure," said Matt Huang, Co-Founder of Paradigm. "Their approach to privacy-preserving reputation will unlock new possibilities for the entire ecosystem."`,
     author: 'Michael Rodriguez',
     publishedAt: '2024-03-05T09:15:00Z',
     readTime: '4 min read',
@@ -134,8 +134,8 @@ The reputation infrastructure market is expected to grow significantly as DeFi m
   {
     id: '4',
     title: 'Technical Deep Dive: Zero-Knowledge Reputation Proofs',
-    excerpt: 'Understanding the cryptographic foundations that make ZKScore\'s privacy-preserving reputation system possible.',
-    content: `This technical article explores the cryptographic mechanisms behind ZKScore's zero-knowledge reputation system.
+    excerpt: 'Understanding the cryptographic foundations that make Anylayer\'s privacy-preserving reputation system possible.',
+    content: `This technical article explores the cryptographic mechanisms behind Anylayer's zero-knowledge reputation system.
 
 ## Introduction to ZK-SNARKs
 
@@ -176,7 +176,7 @@ We've optimized our system for practical use:
 - **Generation Time**: Under 10 seconds for complex proofs
 - **Gas Costs**: Minimal on-chain verification costs
 
-This technical foundation enables ZKScore to provide robust reputation services while maintaining user privacy.`,
+This technical foundation enables Anylayer to provide robust reputation services while maintaining user privacy.`,
     author: 'Dr. Alex Thompson',
     publishedAt: '2024-02-28T16:45:00Z',
     readTime: '8 min read',
@@ -187,9 +187,9 @@ This technical foundation enables ZKScore to provide robust reputation services 
   },
   {
     id: '5',
-    title: 'Community Spotlight: Top ZKScore Users',
+    title: 'Community Spotlight: Top Anylayer Users',
     excerpt: 'Celebrating the community members who have built exceptional on-chain reputations and contributed to the ecosystem.',
-    content: `This month, we're highlighting some of the most active and reputable members of the ZKScore community.
+    content: `This month, we're highlighting some of the most active and reputable members of the Anylayer community.
 
 ## Featured Community Members
 
@@ -227,9 +227,9 @@ We're launching a new recognition program for outstanding community members:
 - **Monthly Spotlights**: Featured community members
 - **Reputation Badges**: Special recognition for achievements
 - **Community Grants**: Funding for community projects
-- **Conference Speaking**: Opportunities to represent ZKScore
+- **Conference Speaking**: Opportunities to represent Anylayer
 
-Thank you to all community members who make ZKScore possible!`,
+Thank you to all community members who make Anylayer possible!`,
     author: 'Community Team',
     publishedAt: '2024-02-20T12:00:00Z',
     readTime: '6 min read',
@@ -268,7 +268,7 @@ export default function NewsPage() {
               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">ZK</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">ZKScore</span>
+              <span className="text-xl font-bold text-gray-900">Anylayer</span>
             </Link>
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</Link>
@@ -283,9 +283,9 @@ export default function NewsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">ZKScore News</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Anylayer News</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest developments, partnerships, and insights from the ZKScore ecosystem
+            Stay updated with the latest developments, partnerships, and insights from the Anylayer ecosystem
           </p>
         </div>
 

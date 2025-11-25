@@ -37,40 +37,40 @@ const docSections: DocSection[] = [
     id: 'getting-started',
     title: 'Getting Started',
     icon: Play,
-    description: 'Quick start guide to integrate ZKScore into your application',
+    description: 'Quick start guide to integrate Anylayer into your application',
     subsections: [
       {
         id: 'installation',
         title: 'Installation',
-        content: `# Install ZKScore SDK
-npm install @zkscore/sdk
+        content: `# Install Anylayer SDK
+npm install @anylayer/sdk
 
 # Or with yarn
-yarn add @zkscore/sdk
+yarn add @anylayer/sdk
 
 # Or with pnpm
-pnpm add @zkscore/sdk`
+pnpm add @anylayer/sdk`
       },
       {
         id: 'initialization',
         title: 'Initialize SDK',
-        content: `import { ZKScore } from '@zkscore/sdk';
+        content: `import { Anylayer } from '@anylayer/sdk';
 
 // Initialize with your API key
-const zkscore = new ZKScore({
+const anylayer = new Anylayer({
   apiKey: 'your-api-key',
   network: 'mainnet', // or 'testnet'
   version: 'v1'
 });
 
 // Connect to user's wallet
-await zkscore.connect();`
+await anylayer.connect();`
       },
       {
         id: 'first-call',
         title: 'Your First API Call',
-        content: `// Get user's ZKScore
-const userScore = await zkscore.getScore('0x...');
+        content: `// Get user's Anylayer
+const userScore = await anylayer.getScore('0x...');
 
 console.log('User Score:', userScore.score);
 console.log('Credit Rating:', userScore.creditRating);
@@ -152,7 +152,7 @@ POST /api/v1/proof/verify`
         id: 'react-integration',
         title: 'React Integration',
         content: `import React, { useEffect, useState } from 'react';
-import { ZKScore } from '@zkscore/sdk';
+import { Anylayer } from '@anylayer/sdk';
 
 const ScoreDisplay = ({ address }) => {
   const [score, setScore] = useState(null);
@@ -161,11 +161,11 @@ const ScoreDisplay = ({ address }) => {
   useEffect(() => {
     const fetchScore = async () => {
       try {
-        const zkscore = new ZKScore({
-          apiKey: process.env.REACT_APP_ZKSCORE_API_KEY
+        const anylayer = new Anylayer({
+          apiKey: process.env.REACT_APP_ANYLAYER_API_KEY
         });
         
-        const userScore = await zkscore.getScore(address);
+        const userScore = await anylayer.getScore(address);
         setScore(userScore);
       } catch (error) {
         console.error('Error fetching score:', error);
@@ -184,7 +184,7 @@ const ScoreDisplay = ({ address }) => {
 
   return (
     <div className="score-display">
-      <h3>ZKScore: {score.score}</h3>
+      <h3>Anylayer: {score.score}</h3>
       <p>Rating: {score.creditRating}</p>
     </div>
   );
@@ -194,7 +194,7 @@ const ScoreDisplay = ({ address }) => {
         id: 'nextjs-integration',
         title: 'Next.js Integration',
         content: `// pages/api/score/[address].js
-import { ZKScore } from '@zkscore/sdk';
+import { Anylayer } from '@anylayer/sdk';
 
 export default async function handler(req, res) {
   const { address } = req.query;
@@ -204,11 +204,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const zkscore = new ZKScore({
-      apiKey: process.env.ZKSCORE_API_KEY
+    const anylayer = new Anylayer({
+      apiKey: process.env.ANYLAYER_API_KEY
     });
     
-    const score = await zkscore.getScore(address);
+    const score = await anylayer.getScore(address);
     
     res.status(200).json({
       success: true,
@@ -228,15 +228,15 @@ export default async function handler(req, res) {
         content: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import "@zkscore/contracts/interfaces/IZKScoreOracle.sol";
+import "@anylayer/contracts/interfaces/IAnylayerOracle.sol";
 
 contract LendingProtocol {
-    IZKScoreOracle public zkScoreOracle;
+    IAnylayerOracle public zkScoreOracle;
     
     uint256 public constant MIN_SCORE = 600;
     
     constructor(address _zkScoreOracle) {
-        zkScoreOracle = IZKScoreOracle(_zkScoreOracle);
+        zkScoreOracle = IAnylayerOracle(_zkScoreOracle);
     }
     
     function requestLoan(uint256 amount) external {
@@ -273,7 +273,7 @@ contract LendingProtocol {
         id: 'proof-generation',
         title: 'Generating Proofs',
         content: `// Generate a ZK proof for credit verification
-const proof = await zkscore.generateProof({
+const proof = await anylayer.generateProof({
   statement: 'creditScore >= 700',
   privateInputs: {
     creditScore: userScore.score,
@@ -292,7 +292,7 @@ console.log('Verification key:', proof.verificationKey);`
         id: 'proof-verification',
         title: 'Verifying Proofs',
         content: `// Verify a ZK proof
-const isValid = await zkscore.verifyProof({
+const isValid = await anylayer.verifyProof({
   proof: proof.proofData,
   verificationKey: proof.verificationKey,
   publicInputs: {
@@ -312,7 +312,7 @@ if (isValid) {
       {
         id: 'circuit-explanation',
         title: 'Circuit Design',
-        content: `// ZKScore uses zk-SNARKs with the following circuit structure:
+        content: `// Anylayer uses zk-SNARKs with the following circuit structure:
 
 template CreditVerification() {
     // Private inputs (hidden from verifier)
@@ -354,22 +354,22 @@ component main = CreditVerification();`
       {
         id: 'lending-protocol',
         title: 'Lending Protocol',
-        content: `// DeFi Lending with ZKScore
+        content: `// DeFi Lending with Anylayer
 class LendingService {
-  constructor(zkscoreApiKey) {
-    this.zkscore = new ZKScore({ apiKey: zkscoreApiKey });
+  constructor(anylayerApiKey) {
+    this.anylayer = new Anylayer({ apiKey: anylayerApiKey });
   }
   
   async evaluateLoanApplication(userAddress, requestedAmount) {
     // Get user's credit score
-    const userScore = await this.zkscore.getScore(userAddress);
+    const userScore = await this.anylayer.getScore(userAddress);
     
     // Risk-based loan terms
     const loanTerms = this.calculateLoanTerms(userScore, requestedAmount);
     
     if (loanTerms.approved) {
       // Generate privacy-preserving proof for compliance
-      const complianceProof = await this.zkscore.generateProof({
+      const complianceProof = await this.anylayer.generateProof({
         statement: 'meetsRegulatoryRequirements',
         privateInputs: userScore,
         publicInputs: { regulatoryThreshold: 600 }
@@ -405,7 +405,7 @@ class LendingService {
         content: `// Decentralized Exchange with Credit-based Features
 class DEXWithCredit {
   async enableAdvancedTrading(userAddress) {
-    const userScore = await this.zkscore.getScore(userAddress);
+    const userScore = await this.anylayer.getScore(userAddress);
     
     // Unlock features based on credit score
     const features = {
@@ -419,7 +419,7 @@ class DEXWithCredit {
   }
   
   async calculateTradingFees(userAddress, tradeVolume) {
-    const userScore = await this.zkscore.getScore(userAddress);
+    const userScore = await this.anylayer.getScore(userAddress);
     
     // Lower fees for higher credit scores
     const baseFee = 0.003; // 0.3%
@@ -446,7 +446,7 @@ class DEXWithCredit {
         content: `// DeFi Insurance with Risk-based Pricing
 class InsuranceProtocol {
   async calculatePremium(userAddress, coverageAmount, duration) {
-    const userScore = await this.zkscore.getScore(userAddress);
+    const userScore = await this.anylayer.getScore(userAddress);
     
     // Risk assessment based on credit score
     const riskLevel = this.assessRisk(userScore);
@@ -474,7 +474,7 @@ class InsuranceProtocol {
   
   async processClaimWithProof(userAddress, claimAmount) {
     // Generate proof that user is eligible for claim
-    const eligibilityProof = await this.zkscore.generateProof({
+    const eligibilityProof = await this.anylayer.generateProof({
       statement: 'hasValidInsurancePolicy',
       privateInputs: {
         policyDetails: await this.getUserPolicy(userAddress),
@@ -521,7 +521,7 @@ export default function DocsPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-black mb-2">Documentation</h1>
-          <p className="text-gray-600">Complete guide to integrating ZKScore into your application</p>
+          <p className="text-gray-600">Complete guide to integrating Anylayer into your application</p>
         </div>
 
         {/* Search */}
@@ -645,7 +645,7 @@ export default function DocsPage() {
                       </button>
                       
                       <a
-                        href="https://github.com/zkscore/examples"
+                        href="https://github.com/anylayer/examples"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"

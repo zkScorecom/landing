@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4">
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              © 2024 ZKScore. All rights reserved.
+              © 2024 Anylayer. All rights reserved.
             </p>
           </div>
           

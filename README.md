@@ -1,15 +1,15 @@
-# ZKScore Landing Page
+# Anylayer Landing Page
 
-The official marketing and landing page for the ZKScore Platform - a decentralized reputation and trust scoring system built on zero-knowledge proofs.
+The official marketing and landing page for the Anylayer Platform - a decentralized reputation and trust scoring system built on zero-knowledge proofs.
 
 ## 🌟 Overview
 
-This is a Next.js-based standalone web application that serves as the primary entry point for users discovering ZKScore. It provides an engaging, modern interface showcasing the platform's features, use cases, and value propositions.
+This is a Next.js-based standalone web application that serves as the primary entry point for users discovering Anylayer. It provides an engaging, modern interface showcasing the platform's features, use cases, and value propositions.
 
 ## ✨ Features
 
 - **Hero Section**: Eye-catching landing with animated elements
-- **Feature Highlights**: Interactive showcase of ZKScore capabilities
+- **Feature Highlights**: Interactive showcase of Anylayer capabilities
 - **Use Cases**: Real-world applications and integrations
 - **Documentation Links**: Direct access to developer resources
 - **Responsive Design**: Mobile-first, fully responsive layout
@@ -134,7 +134,7 @@ Create a `.env.local` file:
 
 ```env
 NEXT_PUBLIC_API_URL=https://us-central1-zksscore.cloudfunctions.net/api
-NEXT_PUBLIC_APP_URL=https://app.zkscore.com
+NEXT_PUBLIC_APP_URL=https://app.anylayer.org
 NEXT_PUBLIC_CHAIN_ID=1
 ```
 
@@ -197,11 +197,11 @@ npm run lint
 
 ## 🔗 Related Links
 
-- [Main Application](https://app.zkscore.com)
-- [Documentation](https://docs.zkscore.com)
+- [Main Application](https://app.anylayer.org)
+- [Documentation](https://docs.anylayer.org)
 - [GitHub Repository](https://github.com/zkScorecom/landing)
-- [Discord Community](https://discord.gg/zkscore)
-- [Twitter](https://twitter.com/zkScore)
+- [Discord Community](https://discord.gg/anylayer)
+- [Twitter](https://twitter.com/anylayer)
 
 ## 🤝 Contributing
 
@@ -215,14 +215,14 @@ We welcome contributions!
 
 ## 📝 License
 
-This project is part of the ZKScore Platform.
+This project is part of the Anylayer Platform.
 
 ## 🆘 Support
 
-- **Documentation**: [docs.zkscore.com](https://docs.zkscore.com)
-- **Discord**: [Join our community](https://discord.gg/zkscore)
-- **Email**: support@zkscore.com
-- **Twitter**: [@zkScore](https://twitter.com/zkScore)
+- **Documentation**: [docs.anylayer.org](https://docs.anylayer.org)
+- **Discord**: [Join our community](https://discord.gg/anylayer)
+- **Email**: support@anylayer.org
+- **Twitter**: [@anylayer](https://twitter.com/anylayer)
 
 ## 🏗️ Built With
 
@@ -241,11 +241,11 @@ This project is part of the ZKScore Platform.
 - [ ] Case study section
 - [ ] Partner showcase
 
-## 🎯 About ZKScore
+## 🎯 About Anylayer
 
-ZKScore is a decentralized reputation and trust scoring platform that enables users to build verifiable on-chain reputation while maintaining privacy through zero-knowledge proofs. Our scoring system analyzes wallet age, DeFi activity, NFT trading, and achievements to create comprehensive trust scores.
+Anylayer is a decentralized reputation and trust scoring platform that enables users to build verifiable on-chain reputation while maintaining privacy through zero-knowledge proofs. Our scoring system analyzes wallet age, DeFi activity, NFT trading, and achievements to create comprehensive trust scores.
 
 ---
 
-**Made with ❤️ by the ZKScore Team**
+**Made with ❤️ by the Anylayer Team**
 

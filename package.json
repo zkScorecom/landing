@@ -1,7 +1,7 @@
 {
-  "name": "@zkscore/web-app",
+  "name": "@anylayer/web-app",
   "version": "1.0.0",
-  "description": "Main user application for ZKScore platform",
+  "description": "Main user application for Anylayer platform",
   "private": true,
   "scripts": {
     "build": "next build",

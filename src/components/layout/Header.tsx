@@ -14,7 +14,7 @@ export function Header() {
               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
                 <Shield className="h-5 w-5 text-white" />
             </div>
-              <span className="text-xl font-bold text-gray-900">ZKScore</span>
+              <span className="text-xl font-bold text-gray-900">Anylayer</span>
             </Link>
           </div>
 
@@ -34,7 +34,7 @@ export function Header() {
           {/* Launch App Button */}
           <div className="flex items-center space-x-4">
             <a
-              href="https://app.zkscore.io"
+              href="https://app.anylayer.org"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-full font-semibold transition-colors"

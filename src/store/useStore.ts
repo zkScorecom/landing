@@ -181,7 +181,7 @@ export const useStore = create<AppState>()(
       }),
     }),
     {
-      name: 'zkscore-app-store',
+      name: 'anylayer-app-store',
       partialize: (state) => ({
         user: state.user,
         notifications: state.notifications,
