@@ -349,7 +349,7 @@ if (userScore.creditRating > 700) {
 
   return (
     <>
-    <div className="relative bg-black">
+    <div className="relative bg-black w-full min-w-full overflow-x-hidden">
         {/* Header & Banner */}
         <section className="relative pt-20 lg:pt-24 overflow-hidden bg-[url('/pattern-dotted.png')] bg-cover bg-center ">
           <motion.header

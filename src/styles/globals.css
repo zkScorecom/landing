@@ -17,7 +17,9 @@ html, body {
   font-family: "Geist", sans-serif;
   line-height: 1.6;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #000000;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -112,8 +114,10 @@ button {
 
 body {
   color: hsl(var(--foreground));
-  background: hsl(var(--background));
+  background: #000000;
   font-family: 'Geist', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
